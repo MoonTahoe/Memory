@@ -1,40 +1,40 @@
 {
-  "name": "memory-js",
-  "version": "0.0.1",
-  "description": "A game of memory to be used in teaching JavaScript Design Patterns",
-  "main": "./bin/www",
-  "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha -R list --recursive"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MoonTahoe/Memory.git"
-  },
-  "keywords": [
-    "Javascript",
-    "card",
-    "game",
-    "tutorial",
-    "design",
-    "patterns"
-  ],
-  "author": "Moon Highway (Alex Banks)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MoonTahoe/Memory/issues"
-  },
-  "homepage": "https://github.com/MoonTahoe/Memory",
-  "dependencies": {
-    "assert": "^1.1.1",
-    "debug": "~0.7.4",
-    "ejs": "~0.8.5",
-    "express": "~4.2.0",
-    "morgan": "~1.0.0",
-    "static-favicon": "~1.0.0"
-  },
-  "devDependencies": {
-    "supertest": "^0.13.0",
-    "mocha": "^1.20.1"
-  }
+    "name": "memory-js",
+    "version": "0.0.1",
+    "description": "A game of memory to be used in teaching JavaScript Design Patterns",
+    "main": "./bin/www",
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "mocha -R list --recursive"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MoonTahoe/Memory.git"
+    },
+    "keywords": [
+        "Javascript",
+        "card",
+        "game",
+        "tutorial",
+        "design",
+        "patterns"
+    ],
+    "author": "Moon Highway (Alex Banks)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MoonTahoe/Memory/issues"
+    },
+    "homepage": "https://github.com/MoonTahoe/Memory",
+    "dependencies": {
+        "debug": "~0.7.4",
+        "ejs": "~0.8.5",
+        "express": "~4.2.0",
+        "morgan": "~1.0.0",
+        "static-favicon": "~1.0.0"
+    },
+    "devDependencies": {
+        "assert": "^1.1.1",
+        "supertest": "^0.13.0",
+        "mocha": "^1.20.1"
+    }
 }
