@@ -9,8 +9,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'public/js/dist/<%= pkg.name %>.min.js': ['public/js/*.js'],
-                    'public/test/dist/<%= pkg.name %>.tests.min.js': ['public/test/*.js']
+                    'public/js/dist/<%= pkg.name %>.min.js': ['public/js/*.js']
                 }
             }
         }
