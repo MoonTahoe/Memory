@@ -12,6 +12,7 @@ before_script:
   - npm install assert
   - npm install grunt-contrib-jasmine
   - npm install grunt-contrib-uglify
+  - npm install jshint
 deploy:
   provider: heroku
   api_key:
