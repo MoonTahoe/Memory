@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-var debug = require('debug')('Memory Card Game');
 var app = require('../app');
-
+var env = process.env.NODE_ENV || 'development';
+if (env == 'development') {
+    var debug = require('debug')('Memory Card Game');
+}
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
