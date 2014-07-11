@@ -1,12 +1,13 @@
+/* global EventCaller */
 describe("Event Caller", function () {
 
     beforeEach(function () {
         this.emitter = new EventCaller();
-        var custom = function() {
+        var Custom = function() {
             this.name = "Some Object";
         };
-        custom.prototype = new EventCaller();
-        this.myObj = new custom();
+        Custom.prototype = new EventCaller();
+        this.myObj = new Custom();
     });
 
     it("can be created", function () {

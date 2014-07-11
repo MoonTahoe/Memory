@@ -1,3 +1,4 @@
+/* global Timer */
 describe("Timer", function () {
 
     beforeEach(function () {

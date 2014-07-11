@@ -1,5 +1,5 @@
 function Timer(iTime) {
-    this.interval;
+    this.interval = null;
     this.intervalTime = iTime || 100;
     this.time = this.intervalTime;
     this.ticks = 0;

@@ -1,3 +1,4 @@
+/* global document, Messenger */
 describe("Messenger", function () {
 
     var msg, el;
@@ -65,7 +66,7 @@ describe("Messenger", function () {
 
             expect(Error).toBeDefined();
             expect(Error.message).toEqual("Messenger Message not a string.");
-        })
+        });
 
     });
 

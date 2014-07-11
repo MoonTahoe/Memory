@@ -1,3 +1,5 @@
+/* global window, document, Messenger, Timer, MemoryGame, Card, Deck */
+
 window.onload = function () {
 
     var debugGame = false,

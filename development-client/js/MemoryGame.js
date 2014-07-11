@@ -1,3 +1,5 @@
+/* global Deck, Card, EventCaller, document */
+
 function MemoryGame(gameTable, debug) {
     this.table = gameTable;
     this.deck = new Deck();
@@ -18,44 +20,10 @@ function MemoryGame(gameTable, debug) {
 
 }
 
-MemoryGame.prototype = new EventCaller();
-
-MemoryGame.prototype.deal = function (done) {
-    var game = this;
-
-    this.gameCards.forEach(function(card) {
-        if (card.faceUp) {
-            card.flip();
-        }
-    });
-
-    if (!this.debug) {
-        this.deck.shuffle();
-    }
-
-    for (var i = 0; i < this.gameCards.length; i++) {
-        this.gameCards[i].cardElement.onclick = (function (gameCard, deck) {
-            return function () {
-                if (game.FaceUpCards.length < 2) {
-                    gameCard.flip();
-                    game.FaceUpCards.push(gameCard);
-                    checkCards(game.FaceUpCards, game);
-                }
-            };
-
-        })(this.gameCards[i], this.deck);
-        this.table.appendChild(this.gameCards[i].cardElement);
-    }
-
-    this.emit('deal', this.table, this.debug);
-    if (done) done(this.table);
-
-};
-
 function checkCards(showingCards, game) {
 
-    if (showingCards.length == 2) {
-        if (showingCards[0].FaceValue == showingCards[1].FaceValue) {
+    if (showingCards.length === 2) {
+        if (showingCards[0].FaceValue === showingCards[1].FaceValue) {
             game.emit('match', showingCards[1].FaceValue);
             setTimeout(function () {
                 showingCards[0].discard();
@@ -79,3 +47,34 @@ function checkCards(showingCards, game) {
         }
     }
 }
+
+MemoryGame.prototype = new EventCaller();
+
+MemoryGame.prototype.deal = function (done) {
+    var game = this;
+
+    this.gameCards.forEach(function (card) {
+        if (card.faceUp) {
+            card.flip();
+        }
+    });
+
+    if (!this.debug) {
+        this.deck.shuffle();
+    }
+
+    this.gameCards.forEach(function (gameCard) {
+        gameCard.cardElement.onclick = function () {
+            if (game.FaceUpCards.length < 2) {
+                gameCard.flip();
+                game.FaceUpCards.push(gameCard);
+                checkCards(game.FaceUpCards, game);
+            }
+        };
+        game.table.appendChild(gameCard.cardElement);
+    });
+
+    this.emit('deal', this.table, this.debug);
+    if (done) { done(this.table); }
+
+};

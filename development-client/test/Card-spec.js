@@ -1,3 +1,5 @@
+/* global document, Card */
+
 describe("Game Card", function() {
 
     beforeEach(function() {

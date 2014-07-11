@@ -1,3 +1,5 @@
+/* global Deck, Card */
+
 describe("Game Deck", function() {
 
     beforeEach(function() {
