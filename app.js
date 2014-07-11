@@ -12,9 +12,9 @@ app.use(favicon());
 app.use(logger('dev'));
 
 if ('development' == env) {
-    app.use(express.static(path.join(__dirname, 'client-source')));
+    app.use(express.static(path.join(__dirname, 'development-client')));
 } else {
-    app.use(express.static(path.join(__dirname, 'client')));
+    app.use(express.static(path.join(__dirname, 'production-client')));
 }
 
 app.use(function(req, res, next) {

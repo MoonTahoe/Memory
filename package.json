@@ -5,7 +5,7 @@
   "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha -R list --recursive"
+    "test": "mocha -R list --recursive; grunt --verbose"
   },
   "repository": {
     "type": "git",
