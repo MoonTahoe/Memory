@@ -41,7 +41,7 @@ MemoryGame.prototype.deal = function (done) {
                     game.FaceUpCards.push(gameCard);
                     checkCards(game.FaceUpCards, game);
                 }
-            }
+            };
 
         })(this.gameCards[i], this.deck);
         this.table.appendChild(this.gameCards[i].cardElement);

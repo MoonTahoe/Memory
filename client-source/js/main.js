@@ -1,8 +1,8 @@
 window.onload = function () {
 
     var debugGame = false,
-        cardTableElement = document.getElementsByTagName("section")[0],
-        messageElement = document.querySelector('header>p'),
+        cardTableElement = document.getElementsByTagName("section")[0] || document.createElement('section'),
+        messageElement = document.querySelector('header>p')  || document.createElement('p'),
         message = new Messenger(messageElement),
         timer = new Timer(),
         game = new MemoryGame(cardTableElement, debugGame);

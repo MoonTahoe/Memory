@@ -3,11 +3,19 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 
-var app = express();
+var env = process.env.NODE_ENV || 'development';
 
+console.log("Express App configured for %s environment", env);
+
+var app = express();
 app.use(favicon());
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
+
+if ('development' == env) {
+    app.use(express.static(path.join(__dirname, 'client-source')));
+} else {
+    app.use(express.static(path.join(__dirname, 'client')));
+}
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -1,6 +1,4 @@
-module.exports = function(grunt) {
-
-    // Project configuration.
+module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
@@ -9,16 +7,14 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'public/js/dist/<%= pkg.name %>.min.js': ['public/js/*.js']
+                    'client/js/memory-card-game.min.js': ['client-source/js/*.js'],
+                    'client/js/memory-card-game-spec.min.js': ['client-source/js/*.js', '!client-source/js/main.js', 'client-source/test/*.js']
                 }
             }
         }
     });
 
-    // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    // Default task(s).
     grunt.registerTask('default', ['uglify']);
 
 };
