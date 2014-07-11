@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 var app = require('../app');
 var env = process.env.NODE_ENV || 'development';
-if (env == 'development') {
-    var debug = require('debug')('Memory Card Game');
-}
+var server, debug;
+
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
-});
+if (env == 'development') {
+    debug = require('debug')('Memory Card Game');
+    server = app.listen(app.get('port'), function() {
+        debug('Express server listening on port ' + server.address().port);
+    });
+} else {
+    server = app.listen(app.get('port'));
+}
+
