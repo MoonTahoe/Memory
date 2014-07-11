@@ -27,6 +27,7 @@
   "homepage": "https://github.com/MoonTahoe/Memory",
   "dependencies": {
     "express": "~4.2.0",
+    "grunt": "^0.4.5",
     "morgan": "~1.0.0",
     "static-favicon": "~1.0.0"
   },

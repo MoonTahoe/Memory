@@ -12,3 +12,4 @@ deploy:
   app: memory-card-game
 before_script:
   - npm install -g grunt-cli
+  - npm install -g mocha
