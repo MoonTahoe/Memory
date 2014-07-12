@@ -1,4 +1,39 @@
 module.exports = function (grunt) {
+
+
+    //
+    //  TODO: Convert and Minify CSS to Less
+    //    -Convert CSS File to less
+    //    -Add Converter to dev index
+    //    -convert css
+    //    -minify css
+    //
+
+    //
+    //  TODO: Create Task $ grunt devtest
+    //    -Runs test in development environment
+    //
+
+
+    //
+    //  TODO: Incorporate Karma Browser Testing
+    //      -Incorporate Karma
+    //      -Deprecate Phantonjs
+    //
+
+    //
+    //  TODO: Create Task $ grunt devkarma
+    //      -Runs Karma testing in development environment
+    //
+
+    //
+    //  TODO: Move HTML Files and other dependencies to production
+    //    -Replace JS dependencies in HTML File
+    //    -Replace CSS dependencies in HTML File
+    //
+
+
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {

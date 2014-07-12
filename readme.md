@@ -15,3 +15,10 @@ Topics
 * CD with Travis CI and Heroku
 
 ###Under Construction....
+
+**Next:**
+* Complete CD and grunt setup
+* Responsive Media Queries
+* Card Flip animation
+* Card Images
+
