@@ -22,7 +22,7 @@ describe("Timer", function () {
 
 
     it("should stop", function (done) {
-        var timer = new Timer(200);
+        var timer = new Timer();
         var startTime = timer.time;
         timer.start();
         setTimeout(function () {
