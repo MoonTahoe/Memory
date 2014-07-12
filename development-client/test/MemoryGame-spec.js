@@ -88,7 +88,9 @@ describe("Memory Game", function () {
 
         it("should be able to flip over one card", function () {
             var firstCard = this.section.firstChild;
-            if (firstCard.onclick)  { firstCard.onclick(); }
+            if (firstCard.onclick) {
+                firstCard.onclick();
+            }
             this.game.gameCards.forEach(function (card, i) {
                 if (i === 0) {
                     expect(card.faceUp).toBe(true);
@@ -115,8 +117,12 @@ describe("Memory Game", function () {
                     done();
                 });
 
-                if (firstCard.onclick) { firstCard.onclick(); }
-                if (secondCard.onclick) { secondCard.onclick(); }
+                if (firstCard.onclick) {
+                    firstCard.onclick();
+                }
+                if (secondCard.onclick) {
+                    secondCard.onclick();
+                }
             });
 
             it("should flip over mismatched cards", function (done) {
@@ -124,8 +130,12 @@ describe("Memory Game", function () {
                     firstCard = table.children[0],
                     secondCard = table.children[3];
 
-                if (firstCard.onclick) { firstCard.onclick(); }
-                if (secondCard.onclick) { secondCard.onclick(); }
+                if (firstCard.onclick) {
+                    firstCard.onclick();
+                }
+                if (secondCard.onclick) {
+                    secondCard.onclick();
+                }
 
                 expect(firstCard.innerHTML).toBe("<span>!</span>");
                 expect(secondCard.innerHTML).toBe("<span>@</span>");
@@ -155,8 +165,12 @@ describe("Memory Game", function () {
                     }, 2000);
                 });
 
-                if (firstCard.onclick) { firstCard.onclick(); }
-                if (secondCard.onclick) { secondCard.onclick(); }
+                if (firstCard.onclick) {
+                    firstCard.onclick();
+                }
+                if (secondCard.onclick) {
+                    secondCard.onclick();
+                }
             });
 
             it("should not allow a third card flip", function () {
@@ -165,9 +179,15 @@ describe("Memory Game", function () {
                     secondCard = table.children[2],
                     thirdCard = table.children[4];
 
-                if (firstCard.onclick) { firstCard.onclick(); }
-                if (secondCard.onclick) { secondCard.onclick(); }
-                if (thirdCard.onclick) { thirdCard.onclick(); }
+                if (firstCard.onclick) {
+                    firstCard.onclick();
+                }
+                if (secondCard.onclick) {
+                    secondCard.onclick();
+                }
+                if (thirdCard.onclick) {
+                    thirdCard.onclick();
+                }
 
                 expect(firstCard.innerHTML).toBe("<span>!</span>");
                 expect(secondCard.innerHTML).toBe("<span>@</span>");
@@ -204,13 +224,18 @@ describe("Memory Game", function () {
 
             function playGame() {
 
-                if (table.children[0].onclick) { table.children[0].onclick(); }
-                if (table.children[1].onclick) { table.children[1].onclick(); }
-
                 if (table.children.length) {
-                    setTimeout(playGame, 2000);
-                }
+                    if (table.children[0] && table.children[0].onclick) {
+                        table.children[0].onclick();
+                    }
+                    if (table.children[1].onclick) {
+                        table.children[1].onclick();
+                    }
 
+                    if (table.children.length) {
+                        setTimeout(playGame, 50);
+                    }
+                }
             }
 
             this.game.on('end', function () {

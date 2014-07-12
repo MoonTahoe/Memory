@@ -6,6 +6,7 @@ function MemoryGame(gameTable, debug) {
     this.MemoryItems = ['!', '@', '#', '$', '%', '&', '*', '+', '=', '?'];
     this.FaceUpCards = [];
     this.debug = debug || false;
+    this.showTime = (debug) ? 0 : 1500;
 
     for (var i = 0; i < this.MemoryItems.length; i++) {
         this.deck.GameCards.push(new Card(this.MemoryItems[i], document.createElement('div')));
@@ -26,6 +27,7 @@ function checkCards(showingCards, game) {
         if (showingCards[0].FaceValue === showingCards[1].FaceValue) {
             game.emit('match', showingCards[1].FaceValue);
             setTimeout(function () {
+
                 showingCards[0].discard();
                 showingCards[1].discard();
                 showingCards.pop();
@@ -35,7 +37,7 @@ function checkCards(showingCards, game) {
                     game.emit('end');
                 }
 
-            }, 1500);
+            }, game.showTime);
         }
         else {
             setTimeout(function () {
@@ -43,7 +45,7 @@ function checkCards(showingCards, game) {
                 showingCards[1].flip();
                 showingCards.pop();
                 showingCards.pop();
-            }, 1500);
+            }, game.showTime);
         }
     }
 }
