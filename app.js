@@ -3,7 +3,6 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 
-// $
 var env = process.env.NODE_ENV || 'development';
 
 console.log("Express App configured for %s environment", env);
