@@ -104,6 +104,8 @@ describe("Memory Game", function () {
             });
         });
 
+        it("should not be able to flip one card back over");
+
         describe("flipping over two cards", function () {
 
             it("should emit 'match' event", function (done) {
