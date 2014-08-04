@@ -12,13 +12,19 @@ Topics
 * BDD with Cucumber and Gherkin
 * TDD with Mocha
 * Grunt Publishing
+* LESS and CSS, Responsive Design
 * CD with Travis CI and Heroku
 
 ###Under Construction....
 
 **Next:**
-* Complete CD and grunt setup
-* Responsive Media Queries
-* Card Flip animation
-* Card Images
+* LESS Integration
+* Tahoe Card Images
+* Card Image Folder Integration
+* Card Flip Animations
+* Card Layout as Table
+* Responsive CSS for all screens
+* Tahoe Card Background
+* Game Win Animations
+* BDD with Cucumber and Gherkin
 
