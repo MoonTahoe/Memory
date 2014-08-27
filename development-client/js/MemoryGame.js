@@ -84,5 +84,6 @@
 
     };
 
+    exports.MemoryGame = MemoryGame;
 
 })(window);
