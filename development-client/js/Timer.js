@@ -1,22 +1,30 @@
-function Timer(iTime) {
-    this.interval = null;
-    this.intervalTime = iTime || 100;
-    this.time = this.intervalTime;
-    this.ticks = 0;
-}
+/*global window */
 
-Timer.prototype.start = function () {
-    var self = this;
-    this.interval = setInterval(function () {
-        self.time += self.intervalTime;
-    }, this.intervalTime);
-};
+(function (exports) {
 
-Timer.prototype.stop = function () {
-    clearInterval(this.interval);
-};
+    function Timer(iTime) {
+        this.interval = null;
+        this.intervalTime = iTime || 100;
+        this.time = this.intervalTime;
+        this.ticks = 0;
+    }
 
-Timer.prototype.reset = function() {
-    this.stop();
-    this.time = 0;
-};
+    Timer.prototype.start = function () {
+        var self = this;
+        this.interval = setInterval(function () {
+            self.time += self.intervalTime;
+        }, this.intervalTime);
+    };
+
+    Timer.prototype.stop = function () {
+        clearInterval(this.interval);
+    };
+
+    Timer.prototype.reset = function () {
+        this.stop();
+        this.time = 0;
+    };
+
+    exports.Timer = Timer;
+
+})(window);
