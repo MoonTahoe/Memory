@@ -13,6 +13,7 @@ before_script:
   - npm install grunt-contrib-jasmine
   - npm install grunt-contrib-uglify
   - npm install grunt-contrib-jshint
+  - npm install grunt-contrib-less
   - npm install grunt-bump
 deploy:
   provider: heroku
