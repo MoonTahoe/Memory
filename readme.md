@@ -18,8 +18,7 @@ Topics
 ###Under Construction....
 
 **Next:**
-* LESS Integration
-* Click 1 card twice bug
+* Integrate LESS
 * Tahoe Card Images
 * Card Image Folder Integration
 * Card Flip Animations

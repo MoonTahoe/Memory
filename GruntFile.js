@@ -1,39 +1,5 @@
 module.exports = function (grunt) {
 
-
-    //
-    //  TODO: Convert and Minify CSS to Less
-    //    -Convert CSS File to less
-    //    -Add Converter to dev index
-    //    -convert css
-    //    -minify css
-    //
-
-    //
-    //  TODO: Create Task $ grunt devtest
-    //    -Runs test in development environment
-    //
-
-
-    //
-    //  TODO: Incorporate Karma Browser Testing
-    //      -Incorporate Karma
-    //      -Deprecate Phantonjs
-    //
-
-    //
-    //  TODO: Create Task $ grunt devkarma
-    //      -Runs Karma testing in development environment
-    //
-
-    //
-    //  TODO: Move HTML Files and other dependencies to production
-    //    -Replace JS dependencies in HTML File
-    //    -Replace CSS dependencies in HTML File
-    //
-
-
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
@@ -60,14 +26,32 @@ module.exports = function (grunt) {
             options: {
                 specs: "production-client/js/spec.min.js"
             }
+        },
+        less: {
+            production: {
+                options: {
+                    paths: ["development-client/css"],
+                    cleancss: true
+                    /*
+                    , modifyVars: {
+                        imgPath: '"http://memory-card-game.herokuapp.com/img"',
+                        bgColor: '$000066'
+                    }
+                    */
+                },
+                files: {
+                    "production-client/css/style.css": "development-client/css/style.less"
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.registerTask('check', ['jshint']);
-    grunt.registerTask('compress', ['uglify']);
+    grunt.registerTask('compress', ['uglify', 'less']);
     grunt.registerTask('test', ['jasmine']);
     grunt.registerTask('travis', ['check', 'compress', 'test']);
     grunt.registerTask('default', 'travis');
