@@ -1,6 +1,6 @@
 {
   "name": "memory-js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A game of memory to be used in teaching JavaScript Design Patterns",
   "main": "./bin/www",
   "scripts": {
