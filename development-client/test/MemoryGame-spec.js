@@ -104,7 +104,27 @@ describe("Memory Game", function () {
             });
         });
 
-        it("should not be able to flip one card back over");
+        it("should not be able to flip one card back over", function() {
+
+            var firstCard = this.section.firstChild;
+            if (firstCard.onclick) {
+                firstCard.onclick();
+                firstCard.onclick();
+            }
+            this.game.gameCards.forEach(function (card, i) {
+                if (i === 0) {
+                    expect(card.faceUp).toBe(true);
+                    expect(card.cardElement.innerHTML).toBe("<span>!</span>");
+                    expect(card.cardElement.getAttribute('class')).toBe("selected");
+                } else {
+                    expect(card.faceUp).toBe(false);
+                    expect(card.cardElement.innerHTML).toBeFalsy();
+                    expect(card.cardElement.getAttribute('class')).toBeFalsy();
+                }
+            });
+
+
+        });
 
         describe("flipping over two cards", function () {
 

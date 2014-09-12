@@ -69,9 +69,12 @@
         this.gameCards.forEach(function (gameCard) {
             gameCard.cardElement.onclick = function () {
                 if (game.FaceUpCards.length < 2) {
-                    gameCard.flip();
-                    game.FaceUpCards.push(gameCard);
-                    checkCards(game.FaceUpCards, game);
+
+                    if (gameCard !== game.FaceUpCards[0]) {
+                        gameCard.flip();
+                        game.FaceUpCards.push(gameCard);
+                        checkCards(game.FaceUpCards, game);
+                    }
                 }
             };
             game.table.appendChild(gameCard.cardElement);
