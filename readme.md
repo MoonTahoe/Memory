@@ -18,7 +18,6 @@ Topics
 ###Under Construction....
 
 **Next:**
-* Integrate LESS
 * Tahoe Card Images
 * Card Image Folder Integration
 * Card Flip Animations
