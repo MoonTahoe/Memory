@@ -35,6 +35,7 @@
     "assert": "^1.1.1",
     "debug": "^1.0.3",
     "grunt": "^0.4.5",
+    "grunt-bump": "0.0.15",
     "grunt-contrib-jasmine": "^0.6.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^0.11.4",
