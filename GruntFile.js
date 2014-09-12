@@ -33,11 +33,11 @@ module.exports = function (grunt) {
                     paths: ["development-client/css"],
                     cleancss: true
                     /*
-                    , modifyVars: {
-                        imgPath: '"http://memory-card-game.herokuapp.com/img"',
-                        bgColor: '$000066'
-                    }
-                    */
+                     , modifyVars: {
+                     imgPath: '"http://memory-card-game.herokuapp.com/img"',
+                     bgColor: '$000066'
+                     }
+                     */
                 },
                 files: {
                     "production-client/css/style.css": "development-client/css/style.less"
@@ -70,6 +70,7 @@ module.exports = function (grunt) {
     grunt.registerTask('compress', ['uglify', 'less']);
     grunt.registerTask('test', ['jasmine']);
     grunt.registerTask('travis', ['check', 'compress', 'test']);
+    grunt.registerTask('push', ['travis', 'bump']);
     grunt.registerTask('default', 'travis');
 
 };
