@@ -55,7 +55,7 @@ module.exports = function (grunt) {
                 tagName: 'v%VERSION%',
                 tagMessage: 'Version %VERSION%',
                 push: true,
-                pushTo: 'https://github.com/MoonTahoe/craps-cli.git',
+                pushTo: 'https://github.com/MoonTahoe/Memory.git',
                 gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
             }
         }
