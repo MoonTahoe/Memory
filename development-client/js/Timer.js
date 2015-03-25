@@ -5,6 +5,10 @@
     function Timer(iTime) {
         this.interval = null;
         this.intervalTime = iTime || 100;
+
+
+        console.log('----------------->  ' + window.navigator.userAgent);
+
         this.time = (/webkit/.test(window.navigator.userAgent.toLowerCase())) ? this.intervalTime : 0;
         this.ticks = 0;
     }
