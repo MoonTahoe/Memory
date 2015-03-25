@@ -27,7 +27,7 @@ describe("Timer", function () {
         var time = timer.time;
         setTimeout(function () {
             timer.stop();
-            expect(timer.time).not.toEqual(0);
+            expect(timer.time).not.toEqual(0); 
             expect(timer.time).toEqual(600);
             time = timer.time;
         }, 600);
